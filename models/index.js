@@ -3,10 +3,10 @@ const mongoose = require('mongoose')
 require ('dotenv').config()
 
 const connect = () => {
-    / Define Atlas URI
+    // Define Atlas URI
 const uri = process.env.ATLAS_URI
 
-// Connect Mongoose to Atlas
+    // Connect Mongoose to Atlas
     mongoose.connect(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -47,3 +47,7 @@ const uri = process.env.ATLAS_URI
 })
 
 // Export function to Connect
+    module.exports = {
+        connect,
+        Drink: mongoose.model('Drink', require('./Drink.js'))
+    }
