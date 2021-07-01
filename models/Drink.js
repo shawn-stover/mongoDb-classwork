@@ -7,7 +7,7 @@ const DrinkSchema = new mongoose.Schema({
         type: String
     },
     rating: {
-        type: number
+        type: Number
     }
 }, {
     timestamps: true
